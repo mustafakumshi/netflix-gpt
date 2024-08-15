@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header';
-import Netflix_Banner from "../assets/images/netflix-banner.jpg"
+import Netflix_Banner from "../assets/images/movies-banner.jpg"
 import { validateSignUpFormData, validateSignInFormData } from '../utils/validate';
 
 const Login = () => {
@@ -30,7 +30,7 @@ const Login = () => {
       <div className='absolute'>
         <img src={Netflix_Banner} alt="banner" />
       </div>
-      <form onSubmit={(e) => e.preventDefault()} action="" className='w-3/12 p-12 bg-black absolute my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
+      <form onSubmit={(e) => e.preventDefault()} action="" className='w-3/12 p-12 bg-black absolute my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-90'>
 
         <h2 className='font-bold text-3xl py-4'>{isSignInForm ? "Sign In" : "Sign Up"}</h2>
 
@@ -43,7 +43,7 @@ const Login = () => {
 
         <button onClick={handleFormValidation}className='p-4 my-6 bg-red-700 w-full rounded-lg'>{isSignInForm ? "Sign In" : "Sign Up"}</button>
 
-        <p className='p-4 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ? "New to Netflix? Sign Up Now" : "Already registered? Sign In Now"}</p>
+        <p className='p-4 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ? "New to Movies? Sign Up Now" : "Already registered? Sign In Now"}</p>
 
       </form>
     </div>
