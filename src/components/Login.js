@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import Header from './Header';
 import Netflix_Banner from "../assets/images/movies-banner.jpg"
 import { validateSignUpFormData, validateSignInFormData } from '../utils/validate';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {auth} from '../utils/firebase'
 
 const Login = () => {
 
@@ -22,6 +24,40 @@ const Login = () => {
      
     const message = !isSignInForm ? validateSignUpFormData(fullName.current.value, email.current.value, password.current.value) : validateSignInFormData(email.current.value, password.current.value)
     setErrorMessage(message);
+
+    if(!message){
+       if(!isSignInForm){
+        // SIGN UP LOGIC
+         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+           .then((userCredential) => {
+             // Signed up 
+             const user = userCredential.user;
+             // ...
+             console.log(user);
+           })
+           .catch((error) => {
+             const errorCode = error.code;
+             const errorMessage = error.message;
+             // ..
+             setErrorMessage(errorCode + "" + errorMessage);
+           });
+
+       } else {
+        // SIGN IN LOGIC
+         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+           .then((userCredential) => {
+             // Signed in 
+             const user = userCredential.user;
+             // ...
+             console.log(user);
+           })
+           .catch((error) => {
+             const errorCode = error.code;
+             const errorMessage = error.message;
+             setErrorMessage(errorCode + "" + errorMessage);
+           });
+       }
+    }
   }
 
   return (
