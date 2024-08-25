@@ -15,6 +15,8 @@
 - Created Redux Store with UserSlice
 - Implemented Signout
 - Updated Profile
+- Bugfix: Redirection
+- Unsubscribed to the onAuthChanged callback
 
 # Features
 
