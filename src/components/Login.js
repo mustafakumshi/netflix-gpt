@@ -4,15 +4,14 @@ import Netflix_Banner from "../assets/images/movies-banner.jpg"
 import { validateSignUpFormData, validateSignInFormData } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import USER_AVATAR from '../assets/images/movies-profile.png'
 
 const Login = () => {
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -40,11 +39,10 @@ const Login = () => {
              // Signed up 
              const user = userCredential.user;
              updateProfile(user, {
-              displayName: fullName.current.value, photoURL: "https://avatars.githubusercontent.com/u/102613277?v=4"
+              displayName: fullName.current.value, photoURL: USER_AVATAR
             }).then(() => {
               const {uid, email, displayName, photoURL} = auth.currentUser;
               dispatch(addUser({uid : uid, email: email, displayName: displayName, photoUrl : photoURL}));
-              navigate("/browse");
             }).catch((error) => {
              setErrorMessage(error.message);
             });
@@ -64,7 +62,6 @@ const Login = () => {
              const user = userCredential.user;
              // ...
              console.log(user);
-             navigate("/browse");
            })
            .catch((error) => {
              const errorCode = error.code;
@@ -79,7 +76,7 @@ const Login = () => {
     <div className=''>
       <Header />
       <div className='absolute'>
-        <img src={Netflix_Banner} alt="banner" />
+        <img src={Netflix_Banner} alt="banner" className='w-screen h-screen'/>
       </div>
       <form onSubmit={(e) => e.preventDefault()} action="" className='w-3/12 p-12 bg-black absolute my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-90'>
 
