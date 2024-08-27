@@ -17,6 +17,8 @@
 - Updated Profile
 - Bugfix: Redirection
 - Unsubscribed to the onAuthChanged callback
+- Register for TMDB API & Ceated an App & got Access Token
+- Get Data from TMDB now playing movie list API
 
 # Features
 
