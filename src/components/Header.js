@@ -44,8 +44,8 @@ const Header = () => {
     <div className='logo absolute w-screen p-8 bg-gradient-to-b from-black z-10 flex justify-between'>
       <img className="w-44" src={Netflix_Logo} alt="logo" />
       {user && (<div className='flex p-2'>
-        <img src={user?.photoUrl} alt={user?.displayName} className='w-12 h-12'/>
-        <button onClick={handleSignOut} className='font-bold text-white'>(SignOut)</button>
+        <img src={user?.photoUrl} alt={user?.displayName} className='w-12 h-12 rounded-sm'/>
+        <button onClick={handleSignOut} className='mx-1 font-bold text-white'>(SignOut)</button>
       </div>)}
     </div>
   )

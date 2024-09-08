@@ -19,6 +19,12 @@
 - Unsubscribed to the onAuthChanged callback
 - Register for TMDB API & Ceated an App & got Access Token
 - Get Data from TMDB now playing movie list API
+- Custom Hook for Now Playing Movies
+- Create moviesSlice
+- Update Store with movies Data 
+- Fetch Data for Trailer Video
+- Update Store with Trailer Video Data
+- Embedded Youtube video with autoplay and mute
 
 # Features
 
