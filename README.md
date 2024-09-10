@@ -25,6 +25,8 @@
 - Fetch Data for Trailer Video
 - Update Store with Trailer Video Data
 - Embedded Youtube video with autoplay and mute
+- Browse Page Secondary Container Done
+- MovieList and MovieCard Components Done
 
 # Features
 
