@@ -27,6 +27,7 @@
 - Embedded Youtube video with autoplay and mute
 - Browse Page Secondary Container Done
 - MovieList and MovieCard Components Done
+- GPT Search Feature
 
 # Features
 
