@@ -28,6 +28,7 @@
 - Browse Page Secondary Container Done
 - MovieList and MovieCard Components Done
 - GPT Search Feature
+- Added 3 Languages for Gpt Search Page
 
 # Features
 
