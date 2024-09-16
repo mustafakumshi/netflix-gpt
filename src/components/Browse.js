@@ -17,12 +17,12 @@ const Browse = () => {
   useTopRatedMovies();
   useUpcomingMovies();
 
-  const isGptValid = useSelector(store => store.gpt.showGptSearch)
+  const showGptSearch = useSelector(store => store.gpt.showGptSearch)
 
   return (
     <div>
       <Header/>
-      {isGptValid ? <GptSearch/> :  <><MainContainer/><SecondaryContainer/></>}
+      {showGptSearch ? <GptSearch/> :  <><MainContainer/><SecondaryContainer/></>}
     </div>
   )
 }
